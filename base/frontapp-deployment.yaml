@@ -26,4 +26,3 @@ spec:
           value: "frontapp"
         - name: JAVA_OPTS
           value: ""
-
