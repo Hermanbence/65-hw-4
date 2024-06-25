@@ -23,6 +23,9 @@ spec:
         - name: BACK_URL
           value: "http://backapp-service:8080"
         - name: APP_DEFAULT_MESSAGE
-          value: "frontapp"
+          valueFrom:
+            configMapKeyRef:
+              name: app-config
+              key: APP_DEFAULT_MESSAGE_FRONTAPP
         - name: JAVA_OPTS
           value: ""

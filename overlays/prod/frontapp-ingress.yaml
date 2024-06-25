@@ -6,10 +6,10 @@ metadata:
     homework: frontapp
 spec:
   rules:
-  - host: localhost
+  - host: application.cubix.localhost
     http:
       paths:
-      - path: /
+      - path: /frontapp
         pathType: Prefix
         backend:
           service:

@@ -19,6 +19,9 @@ spec:
         - containerPort: 8080
         env:
         - name: APP_DEFAULT_MESSAGE
-          value: "backapp"
+          valueFrom:
+            configMapKeyRef:
+              name: app-config
+              key: APP_DEFAULT_MESSAGE_BACKAPP
         - name: JAVA_OPTS
-          value: "-Dspring.main.banner-mode=off"
+          value: ""
