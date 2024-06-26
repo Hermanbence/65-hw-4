@@ -1,3 +1,5 @@
+kubectl create ns hw4-dev
+
 kubectl kustomize .
 
 kubectl apply -k .
