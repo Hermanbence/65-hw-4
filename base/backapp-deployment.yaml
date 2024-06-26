@@ -19,9 +19,6 @@ spec:
         - containerPort: 8080
         env:
         - name: APP_DEFAULT_MESSAGE
-          valueFrom:
-            configMapKeyRef:
-              name: app-config
-              key: APP_DEFAULT_MESSAGE_BACKAPP
+          value: "backapp"
         - name: JAVA_OPTS
           value: ""

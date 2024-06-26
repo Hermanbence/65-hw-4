@@ -4,6 +4,7 @@ metadata:
   name: frontapp
   labels: 
     homework: frontapp
+    training: block4
 spec:
   rules:
   - host: other.cubix.localhost

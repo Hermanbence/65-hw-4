@@ -1,7 +1,6 @@
 namespace: hw4-test
 resources:
 - ../../base
-- namespace.yaml
 - frontapp-ingress.yaml
 patches:
-- path: patch-configmap.yaml
+- path: patch-backapp-deployment.yaml

@@ -1,7 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: app-config
-data:
-  APP_DEFAULT_MESSAGE_FRONTAPP: "frontapp"
-  APP_DEFAULT_MESSAGE_BACKAPP: "backapp"
