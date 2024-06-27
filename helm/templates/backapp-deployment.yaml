@@ -7,10 +7,12 @@ spec:
   selector: 
     matchLabels: 
       homework: backapp
+      training: block4
   template:
     metadata: 
       labels:
         homework: backapp
+        training: block4
     spec:
       containers:
       - name: backapp
