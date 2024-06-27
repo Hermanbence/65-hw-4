@@ -4,11 +4,9 @@ metadata:
   name: backapp-service
   labels:
     homework: backapp
-    training: block3
 spec:
   selector:
     homework: backapp
-    training: block3
   ports:
   - protocol: TCP
     port: 8080

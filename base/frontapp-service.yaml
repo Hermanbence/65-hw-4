@@ -4,11 +4,9 @@ metadata:
   name: frontapp-service
   labels:
     homework: frontapp
-    training: block3
 spec:
   selector:
     homework: frontapp
-    training: block3
   ports:
   - protocol: TCP
     port: 8080
