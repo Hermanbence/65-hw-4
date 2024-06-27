@@ -27,6 +27,6 @@ spec:
         - name: BACK_URL
           value: "http://backapp-service:8080"
         - name: APP_DEFAULT_MESSAGE
-          value: {{ .Values.frontapp.AppDefaultMessage }}
+          value: "{{ .Values.frontapp.AppDefaultMessage }}"
         - name: JAVA_OPTS
           value: ""

@@ -1,4 +1,7 @@
 Namespace: hw4-prod
+ingress:
+  enabled: true
+
 backapp:
   replicaCount: 2
 frontapp:

@@ -22,6 +22,6 @@ spec:
         - containerPort: 8080
         env:
         - name: APP_DEFAULT_MESSAGE
-          value: {{ .Values.backapp.AppDefaultMessage }}
+          value: "{{ .Values.backapp.AppDefaultMessage }}"
         - name: JAVA_OPTS
           value: ""
