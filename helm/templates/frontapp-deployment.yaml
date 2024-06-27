@@ -6,7 +6,7 @@ metadata:
     homework: frontapp
     training: block4
 spec:
-  replicas: {{ .Values.replicaCount }}
+  replicas: {{ .Values.frontapp.replicaCount }}
   selector: 
     matchLabels: 
       homework: frontapp

@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: backapp
 spec:
-  replicas: 1
+  replicas: {{ .Values.backapp.replicaCount }}
   selector: 
     matchLabels: 
       homework: backapp

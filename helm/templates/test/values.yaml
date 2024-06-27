@@ -1,1 +1,4 @@
-replicaCount: 1
+backapp:
+  replicaCount: 2
+frontapp:
+  replicaCount: 2
