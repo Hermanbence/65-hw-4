@@ -7,3 +7,4 @@ backapp:
 frontapp:
   replicaCount: 2
   host: application.cubix.localhost
+  AppDefaultMessage: prod-frontapp
