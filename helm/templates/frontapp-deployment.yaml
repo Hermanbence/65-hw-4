@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: frontapp
+  namespace: {{ .Values.Namespace }}
   labels:
     homework: frontapp
     training: block4

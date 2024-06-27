@@ -1,3 +1,4 @@
+Namespace: hw4-prod
 backapp:
   replicaCount: 2
 frontapp:
