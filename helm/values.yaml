@@ -1,3 +1,4 @@
+Namespace: hw4-helm
 backapp:
   replicaCount: 1
 frontapp:
