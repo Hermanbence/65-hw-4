@@ -3,3 +3,4 @@ backapp:
   replicaCount: 2
 frontapp:
   replicaCount: 2
+  host: application.cubix.localhost

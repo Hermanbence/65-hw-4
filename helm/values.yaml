@@ -1,5 +1,7 @@
 Namespace: hw4-helm
 backapp:
   replicaCount: 1
+  AppDefaultMessage: "backapp"
 frontapp:
   replicaCount: 1
+  AppDefaultMessage: "frontapp"
