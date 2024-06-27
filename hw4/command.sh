@@ -1,1 +1,0 @@
-helm install hw4-dev .\hw4\ -n hw4-helm
