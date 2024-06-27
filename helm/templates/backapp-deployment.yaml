@@ -3,6 +3,9 @@ kind: Deployment
 metadata:
   name: backapp
   namespace: {{ .Values.Namespace }}
+  labels:
+    homework: frontapp
+    training: block4
 spec:
   replicas: {{ .Values.backapp.replicaCount }}
   selector: 

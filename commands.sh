@@ -30,5 +30,9 @@ helm template myrelease . -f templates/prod/values.yaml
 helm template myrelease . -f templates/test/values.yaml
 helm template myrelease . -f templates/dev/values.yaml
 
-# 
+# create manifest from the render
+helm template hw4-prod . -f templates/prod/values.yaml > generated-manifests.yaml
+
+# helm install RELEASE_NAME CHART_PATH [flags] [options]
 helm install hw4-dev .\hw4\ -n hw4-helm
+helm install hw4-prod . -f templates/prod/values.yaml
