@@ -1,0 +1,9 @@
+Namespace: hw4-test
+ingress:
+  enabled: true
+  
+backapp:
+  replicaCount: 2
+frontapp:
+  replicaCount: 2
+  host: other.cubix.localhost

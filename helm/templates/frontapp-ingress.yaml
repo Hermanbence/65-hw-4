@@ -1,0 +1,21 @@
+{{- if .Values.ingress.enabled }}
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: frontapp
+  labels: 
+    homework: frontapp
+    training: block4
+spec:
+  rules:
+  - host: {{ .Values.frontapp.host }}
+    http:
+      paths:
+      - path: /frontapp
+        pathType: Prefix
+        backend:
+          service:
+            name: frontapp-service
+            port:
+              number: 8080
+{{- end }}

@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontapp-service
+  namespace: {{ .Values.Namespace }}
+  labels:
+    homework: frontapp
+    training: block4
+spec:
+  selector:
+    homework: frontapp
+    training: block4
+  ports:
+  - protocol: TCP
+    port: 8080
+    targetPort: 8080
+  type: ClusterIP  
+

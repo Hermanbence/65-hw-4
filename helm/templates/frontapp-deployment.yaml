@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontapp
+  namespace: {{ .Values.Namespace }}
+  labels:
+    homework: frontapp
+    training: block4
+spec:
+  replicas: {{ .Values.frontapp.replicaCount }}
+  selector: 
+    matchLabels: 
+      homework: frontapp
+      training: block4
+  template:
+    metadata: 
+      labels:
+        homework: frontapp
+        training: block4
+    spec:
+      containers:
+      - name: frontapp
+        image: quay.io/drsylent/cubix/block3/homework-frontapp:springboot3
+        ports:
+        - containerPort: 8080
+        env:
+        - name: BACK_URL
+          value: "http://backapp-service:8080"
+        - name: APP_DEFAULT_MESSAGE
+          value: "{{ .Values.frontapp.AppDefaultMessage }}"
+        - name: JAVA_OPTS
+          value: ""

@@ -25,5 +25,17 @@ helm create helm
 # Render a Helm chart into Kubernetes manifests 
 helm template .
 
-# 
-helm install hw4-dev .\hw4\ -n hw4-helm
+# From helm Chart.yaml dir, -f path for the required values.yaml
+helm template myrelease . -f templates/prod/values.yaml
+helm template myrelease . -f templates/test/values.yaml
+helm template myrelease . -f templates/dev/values.yaml
+
+# helm install RELEASE_NAME CHART_PATH [flags] [options]
+helm install hw4-prod . -f prod/values.yaml
+helm install hw4-dev . -f dev/values.yaml 
+helm install hw4-test . -f test/values.yaml 
+
+# helm unistall
+helm uninstall hw4-prod 
+helm uninstall hw4-dev 
+helm uninstall hw4-test 

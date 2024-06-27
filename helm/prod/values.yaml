@@ -1,0 +1,10 @@
+Namespace: hw4-prod
+ingress:
+  enabled: true
+
+backapp:
+  replicaCount: 2
+frontapp:
+  replicaCount: 2
+  host: application.cubix.localhost
+  AppDefaultMessage: prod-frontapp

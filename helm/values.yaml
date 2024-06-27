@@ -1,0 +1,9 @@
+Namespace: hw4-helm
+ingress:
+  enabled: false
+backapp:
+  replicaCount: 1
+  AppDefaultMessage: "backapp"
+frontapp:
+  replicaCount: 1
+  AppDefaultMessage: "frontapp"
