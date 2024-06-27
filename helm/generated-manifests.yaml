@@ -1,0 +1,150 @@
+---
+# Source: hw4/templates/backapp-service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: backapp-service
+  namespace: hw4-prod
+  labels:
+    homework: backapp
+    training: block4
+spec:
+  selector:
+    homework: backapp
+    training: block4
+  ports:
+  - protocol: TCP
+    port: 8080
+    targetPort: 8080
+  type: ClusterIP
+---
+# Source: hw4/templates/frontapp-service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontapp-service
+  namespace: hw4-prod
+  labels:
+    homework: frontapp
+    training: block4
+spec:
+  selector:
+    homework: frontapp
+    training: block4
+  ports:
+  - protocol: TCP
+    port: 8080
+    targetPort: 8080
+  type: ClusterIP
+---
+# Source: hw4/templates/backapp-deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backapp
+  namespace: hw4-prod
+  labels:
+    homework: frontapp
+    training: block4
+spec:
+  replicas: 2
+  selector: 
+    matchLabels: 
+      homework: backapp
+      training: block4
+  template:
+    metadata: 
+      labels:
+        homework: backapp
+        training: block4
+    spec:
+      containers:
+      - name: backapp
+        image: quay.io/drsylent/cubix/block3/homework-backapp:springboot3
+        ports:
+        - containerPort: 8080
+        env:
+        - name: APP_DEFAULT_MESSAGE
+          value: "backapp"
+        - name: JAVA_OPTS
+          value: ""
+---
+# Source: hw4/templates/frontapp-deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontapp
+  namespace: hw4-prod
+  labels:
+    homework: frontapp
+    training: block4
+spec:
+  replicas: 2
+  selector: 
+    matchLabels: 
+      homework: frontapp
+      training: block4
+  template:
+    metadata: 
+      labels:
+        homework: frontapp
+        training: block4
+    spec:
+      containers:
+      - name: frontapp
+        image: quay.io/drsylent/cubix/block3/homework-frontapp:springboot3
+        ports:
+        - containerPort: 8080
+        env:
+        - name: BACK_URL
+          value: "http://backapp-service:8080"
+        - name: APP_DEFAULT_MESSAGE
+          value: "frontapp"
+        - name: JAVA_OPTS
+          value: ""
+---
+# Source: hw4/templates/frontapp-ingress.yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: frontapp
+  labels: 
+    homework: frontapp
+    training: block4
+spec:
+  rules:
+  - host: application.cubix.localhost
+    http:
+      paths:
+      - path: /frontapp
+        pathType: Prefix
+        backend:
+          service:
+            name: frontapp-service
+            port:
+              number: 8080
+---
+# Source: hw4/templates/dev/values.yaml
+Namespace: hw4-dev
+---
+# Source: hw4/templates/prod/values.yaml
+Namespace: hw4-prod
+ingress:
+  enabled: true
+
+backapp:
+  replicaCount: 2
+frontapp:
+  replicaCount: 2
+  host: application.cubix.localhost
+---
+# Source: hw4/templates/test/values.yaml
+Namespace: hw4-test
+ingress:
+  enabled: true
+  
+backapp:
+  replicaCount: 2
+frontapp:
+  replicaCount: 2
+  host: other.cubix.localhost
