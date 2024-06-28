@@ -15,7 +15,7 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: frontapp-service
+            name: frontapp
             port:
-              number: 8080
+              number: 80
 {{- end }}
