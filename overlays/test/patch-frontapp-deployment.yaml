@@ -1,12 +1,12 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: backapp
+  name: frontapp
 spec:
   template:
     spec:
       containers:
-      - name: backapp
+      - name: frontapp
         env:
         - name: APP_DEFAULT_MESSAGE
-          value: "backapp-test"
+          value: "frontapp-test"

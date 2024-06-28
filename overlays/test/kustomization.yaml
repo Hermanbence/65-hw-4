@@ -3,4 +3,4 @@ resources:
 - ../../base
 - frontapp-ingress.yaml
 patches:
-- path: patch-backapp-deployment.yaml
+- path: patch-frontapp-deployment.yaml
