@@ -1,4 +1,3 @@
-Namespace: hw4-helm
 ingress:
   enabled: false
 backapp:

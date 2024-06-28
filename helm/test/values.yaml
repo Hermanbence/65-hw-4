@@ -1,4 +1,3 @@
-Namespace: hw4-test
 ingress:
   enabled: true
   
