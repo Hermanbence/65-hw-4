@@ -26,14 +26,18 @@ helm create helm
 helm template .
 
 # From helm Chart.yaml dir, -f path for the required values.yaml
-helm template myrelease . -f templates/prod/values.yaml
-helm template myrelease . -f templates/test/values.yaml
-helm template myrelease . -f templates/dev/values.yaml
+helm template myrelease . -f prod/values.yaml
+helm template myrelease . -f test/values.yaml
+helm template myrelease . -f dev/values.yaml
 
 # helm install RELEASE_NAME CHART_PATH [flags] [options]
-helm install hw4-prod . -f prod/values.yaml
-helm install hw4-dev . -f dev/values.yaml 
-helm install hw4-test . -f test/values.yaml 
+helm install hw4-prod . -f prod/values.yaml -n hw4-prod
+helm install hw4-dev . -f dev/values.yaml -n hw4-dev
+helm install hw4-test . -f test/values.yaml -n hw4-test
+
+# helm upgrade
+# helm upgrade [RELEASE] [CHART] [flags]
+helm upgrade hw4-prod . -f prod/values.yaml -n hw4-prod
 
 # helm unistall
 helm uninstall hw4-prod 
