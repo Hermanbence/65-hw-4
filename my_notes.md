@@ -29,3 +29,7 @@ helm repo add bitnami URL
 helm repo update
 helm show value bitnami/postgresql
 ```
+
+kubectl get endpoints frontapp -n hw4-prod
+kubectl describe ingress frontapp -n hw4-prod
+kubectl port-forward svc/frontapp 8080:8080 -n hw4-prod

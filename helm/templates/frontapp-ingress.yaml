@@ -17,5 +17,5 @@ spec:
           service:
             name: frontapp
             port:
-              number: 80
+              number: 8080
 {{- end }}

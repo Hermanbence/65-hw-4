@@ -11,6 +11,6 @@ spec:
     training: block4
   ports:
   - protocol: TCP
-    port: 8080
-    targetPort: 8080
+    port: 8080          # The service is exposed internally within the cluster. Pods in the cluster can access the service at frontapp:8081 or backapp:8081
+    targetPort: 8080    # This is the port on the pods where the service forwards the traffic. 
 

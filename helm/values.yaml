@@ -3,6 +3,11 @@ ingress:
 backapp:
   replicaCount: 1
   AppDefaultMessage: "backapp"
+  JavaOpts: 
 frontapp:
   replicaCount: 1
   AppDefaultMessage: "frontapp"
+  JavaOpts: -Dspring.main.banner-mode=off
+  env: 
+    - name: CUBIX_HOMEWORK
+      value: CUBIX_HOMEWORK-hw4

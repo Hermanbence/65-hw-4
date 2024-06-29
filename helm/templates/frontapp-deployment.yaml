@@ -26,4 +26,8 @@ spec:
         - name: APP_DEFAULT_MESSAGE
           value: "{{ .Values.frontapp.AppDefaultMessage }}"
         - name: JAVA_OPTS
-          value: ""
+          value: "{{ .Values.frontapp.JavaOpts }}"
+        {{- range .Values.frontapp.env}}
+        - name: {{ .name }} 
+          value: {{ .value }} 
+        {{- end }}
