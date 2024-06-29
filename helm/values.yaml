@@ -6,7 +6,7 @@ backapp:
   JavaOpts: 
 frontapp:
   replicaCount: 1
-  AppDefaultMessage: "frontapp"
+  AppDefaultMessage: "frontapp changed message"
   JavaOpts: -Dspring.main.banner-mode=off
   env: 
     - name: CUBIX_HOMEWORK
