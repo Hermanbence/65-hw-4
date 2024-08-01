@@ -9,7 +9,7 @@ kubectl create ns hw4-test
 kubectl kustomize .
 
 # Apply kustomization yaml in the current dir.
-ć
+kubectl apply -k .
 
 # Apply kustomization yaml in the overlay/test dir from parent dir.
 kubectl apply -k .\overlays\test\
